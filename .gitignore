@@ -36,5 +36,5 @@ test/out-fixtures/*
 test/watch-*.txt
 gulp.1
 build
-/build/main.js
+/src/main.js
 /electron/Electron.app/Contents/Resources/app/
