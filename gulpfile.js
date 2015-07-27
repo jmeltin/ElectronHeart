@@ -38,7 +38,7 @@ gulp.task('produce', ['haxe'], function() {
 });
 
 gulp.task('haxe', ['sass', 'compress', 'html'], function() {
-	return run('haxe -lib nodejs -cp ./src/haxe/ -js ./src/main.js -main Main.hx').exec();
+	return run('haxe -cp ./src/haxe/ -js ./src/main.js -main Main.hx').exec();
 });
 
 
@@ -62,3 +62,7 @@ gulp.task('html', function() {
 		.pipe(reload());
 });
 
+//////////////////////////////////////////////////////////////////////////
+gulp.task('compile', function() {
+	return run('haxe -cp ./src/haxe/ -js ./src/main.js -main Main.hx').exec();
+});

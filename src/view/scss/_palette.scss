@@ -1,0 +1,44 @@
+@function background($lightness, $alpha) {
+  @return hsla(0, 100%, $lightness, $alpha);
+}
+@function danger($lightness) {
+  @return hsla(3, 66%, $lightness, 1);
+}
+@function warning($lightness) {
+  @return hsla(41, 82%, $lightness, 1);
+}
+@function allClear($lightness) {
+  @return hsla(129, 80%, $lightness, 1);
+}
+
+[palette] {transition: 0.3333s;}
+[palette]:hover {transition: 0s;}
+[palette]:active {transition: 0s;}
+
+[palette~="primary"] {
+	background: background(0, 0.7);
+}
+[palette~="secondary"] {
+	background: background(0, 0.2);
+}
+
+[palette~="danger"] {
+	background: danger(63%);
+	border-color: danger(43%);
+}
+[palette~="danger"]:hover {border-color: danger(73%);}
+[palette~="danger"]:active {background: danger(53%);}
+
+[palette~="warning"] {
+	background: warning(81%);
+	border-color: warning(61%);
+}
+[palette~="warning"]:hover {border-color: warning(91%);}
+[palette~="warning"]:active {background: warning(71%);}
+
+[palette~="all-clear"] {
+	background: allClear(71%);
+	border-color: allClear(51%);
+}
+[palette~="all-clear"]:hover {border-color: all-clear(81%);}
+[palette~="all-clear"]:active {background: all-clear(61%);}

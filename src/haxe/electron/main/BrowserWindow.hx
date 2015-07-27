@@ -6,4 +6,6 @@ extern class BrowserWindow {
   function on(eventType : String, callback : Void -> Void) : Void;
   function openDevTools(?options : { ?detach : Bool }) : Void;
   function loadUrl(path : String) : Void;
+  function close() : Void;
+  function minimize() : Void;
 }
