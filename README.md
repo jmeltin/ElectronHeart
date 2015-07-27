@@ -1,1 +1,3 @@
-# Jhavari Heart LIFX Application
+# Electron LIFX Heart
+
+Electron application that sends signals to lightbulbs.
