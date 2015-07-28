@@ -38,6 +38,7 @@ class Window
 		});
 		mainWindow.loadUrl('file://' + Node.__dirname + '/' + _file + '.html');
 		mainWindow.openDevTools();
+		mainWindow.setAlwaysOnTop(true);
 		mainWindow.on('closed', function() {
 			mainWindow = null;
 		});

@@ -8,4 +8,5 @@ extern class BrowserWindow {
   function loadUrl(path : String) : Void;
   function close() : Void;
   function minimize() : Void;
+  function setAlwaysOnTop(onTop :Bool) : Void;
 }

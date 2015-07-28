@@ -31,13 +31,42 @@ function DateTime()
 		return strTime;
 	}
 }
-var dTime = new DateTime();
 function handleTimeDate() {
-	document.getElementById('time').innerHTML = dTime.time();
-	document.getElementById('date').innerHTML = dTime.date;
+	document.getElementById('time').innerHTML = new DateTime().time();
+	document.getElementById('date').innerHTML = new DateTime().date;
 };
 handleTimeDate();
 window.setInterval(handleTimeDate, 1000/60);
+
+////////////////////////////////////////////////////////////
+//////////////////  EVENT LOGGER       /////////////////////
+var logWindow = document.getElementById('logWindow');
+var logScrollHeight = logWindow.scrollHeight;
+var logLength = 0;
+var logMaxLength = 50;
+function logEvent(dangerLevel, text) {
+	var item = document.createElement('log-item');
+	var time = document.createElement('log-time');
+	var content = document.createElement('log-content');
+	time.innerHTML = new DateTime().time();
+	time.setAttribute('palette', dangerLevel);
+	content.innerHTML = text;
+
+	logWindow.appendChild(item);
+	item.appendChild(time);
+	item.appendChild(content);
+
+	if(logWindow.scrollHeight > logScrollHeight) {
+		logWindow.scrollTop = logWindow.scrollHeight - logScrollHeight;
+	}
+
+	if(++logLength >= logMaxLength) {
+		logWindow.removeChild(logWindow.firstChild);
+	}
+}
+
+
+
 
 
 
