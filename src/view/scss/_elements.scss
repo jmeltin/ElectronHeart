@@ -4,7 +4,7 @@ body {
 	-webkit-app-region: drag;
 }
 
-settings {
+setting-item {
 	-webkit-app-region: no-drag;
 	outline: none;
 }
@@ -31,10 +31,10 @@ sidebar {
 heartrate {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 1px;
 	height: 185px;
 	justify-content: flex-start;
 	padding-top: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 
 date, average, min, max {
@@ -46,7 +46,7 @@ date {
 	flex-direction: column;
 	justify-content: center;
 	width: calc(28% - 1px);
-	margin-right: 1px;
+	border-right: 1px solid rgba(0,0,0,0.4);
 }
 
 average, min, max {
@@ -55,14 +55,14 @@ average, min, max {
 }
 average, min {
 	width: calc(24% - 1px);
-	margin-right: 1px;
+	border-right: 1px solid rgba(0,0,0,0.4);
 }
 max {
 	width: 24%;
 }
 
 log {
-	height: 312px;
+	height: 317px;
 	overflow: scroll;
 }
 
@@ -134,11 +134,14 @@ log {
 log-item {
 	font-size: 14px;
 	display: block;
+	font-weight: 100;
 }
 
 log-time {
 	width: 15%;
 	text-align: center;
+	color: #000;
+	font-weight: 300;
 }
 
 log-time, log-content {
@@ -151,8 +154,8 @@ log-content {
 	-webkit-app-region: no-drag;
 }
 
-log-item:nth-of-type(2n+1) {
-	background-color: rgba(0,0,0, 0.04);
+log-item:nth-of-type(2n) {
+	background-color: rgba(255,255,255, 0.05);
 }
 
 settings {
@@ -186,7 +189,6 @@ setting-group:last-of-type {
 setting-item input {
 	width: 100%;
 }
-
 
 
 

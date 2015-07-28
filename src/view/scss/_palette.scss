@@ -11,7 +11,7 @@
   @return hsla(41, 82%, $lightness, 1);
 }
 @function allClear($lightness) {
-  @return hsla(129, 80%, $lightness, 1);
+  @return hsla(190, 66%, $lightness, 1);
 }
 @function soft($lightness) {
   @return hsla(200, 0%, $lightness, 1);
@@ -26,7 +26,8 @@
 	color: defaultType(95);
 }
 [palette~="secondary"] {
-	background: background(95, 0.9);
+	background: background(10, 0.9);
+	color: defaultType(95);
 }
 
 [palette~="danger"] {
