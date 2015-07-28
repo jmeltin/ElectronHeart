@@ -37,10 +37,14 @@ gulp.task('produce', ['haxe'], function() {
 		.pipe(gulp.dest('./build'));
 });
 
-gulp.task('haxe', ['sass', 'compress', 'html'], function() {
+gulp.task('haxe', ['sass', 'compress', 'html', 'font'], function() {
 	return run('haxe -cp ./src/haxe/ -js ./src/main.js -main Main.hx').exec();
 });
 
+gulp.task('font', function() {
+	return gulp.src('./src/view/font/**/*')
+		.pipe(gulp.dest('./build/css/'));
+});
 
 gulp.task('sass', function () {
 	gulp.src('./src/view/scss/*.scss')

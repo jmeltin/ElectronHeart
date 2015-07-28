@@ -1,6 +1,9 @@
 @function background($lightness, $alpha) {
   @return hsla(190, 100%, $lightness, $alpha);
 }
+@function defaultType($lightness) {
+  @return hsla(190, 100%, $lightness, 1);
+}
 @function danger($lightness) {
   @return hsla(3, 66%, $lightness, 1);
 }
@@ -17,9 +20,10 @@
 
 [palette~="primary"] {
 	background: background(0, 0.7);
+	color: defaultType(95);
 }
 [palette~="secondary"] {
-	background: background(40, 0.4);
+	background: background(95, 0.9);
 }
 
 

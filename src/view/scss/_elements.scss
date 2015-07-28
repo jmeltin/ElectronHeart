@@ -1,13 +1,19 @@
 $titleHeight: 25px;
 
-main {
+body {
+	-webkit-app-region: drag;
+}
+
+main, titlebar, sidebar, content, heartrate, date, minmax, log, titlebuttons {
+	padding: 0;
+	margin: 0;
+	display: block;
+	-webkit-user-select: none;
 }
 
 titlebar {
 	height: $titleHeight;
 	overflow: hidden;
-	border-bottom: 1px solid #000;
-	-webkit-app-region: drag;
 }
 
 sidebar {
@@ -16,6 +22,44 @@ sidebar {
 
 content {
 	height: calc(100% - #{$titleHeight})
+}
+
+heartrate {
+	display: flex;
+	margin-bottom: 1px;
+	height: 200px;
+	justify-content: center;
+}
+
+date, min, max {
+	height: 85px;
+}
+
+date {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: calc(50% - 1px);
+	margin-right: 1px;
+}
+
+min, max {
+	flex-direction: column;
+	display: flex;
+}
+min {
+	width: calc(25% - 1px);
+	margin-right: 1px;
+}
+max {
+	width: 25%;
+}
+
+
+log {
+	height: 285px;
+	flex-direction: column;
+	display: flex;
 }
 
 [button] {
@@ -31,3 +75,70 @@ content {
 	height: 12px;
 	border-radius: 50%;
 }
+
+[number~="bpm"] {
+	font-size: 130px;
+	align-self: center;
+}
+
+[number~="time"] {
+	font-size: 30px;
+	font-weight: 100;
+	align-self: center;
+}
+
+[number~="date"] {
+	font-size: 19px;
+	font-weight: 100;
+	align-self: center;
+}
+
+[type~="title"] {
+	font-size: 19px;
+	font-weight: 100;
+	padding: 10px 0 3px;
+	display: block;
+	align-self: center;
+}
+
+
+
+
+log-item {
+	font-size: 14px;
+	display: flex;
+}
+
+log-time {
+	flex-basis: 15%;
+	text-align: center;
+}
+
+log-time, log-content {
+	padding: 6px 15px;
+}
+
+log-item:nth-of-type(2n+1) {
+	background-color: rgba(0,0,0, 0.06);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

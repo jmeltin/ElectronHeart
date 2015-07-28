@@ -22,7 +22,8 @@ html, body {
 }
 
 [grid~="2/3"] {
-	width: calc(61.80339887498948%);
+	width: calc(61.80339887498948% - 1px);
+	margin-right: 1px;
 }
 
 [grid~="3/3"] {

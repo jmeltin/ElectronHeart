@@ -9,21 +9,63 @@
 	</head>
 
 	<body>
-		<main class="group fullHeight" palette="secondary">
-			<titlebar  grid="3/3" palette="primary">
-				<div class="group">
+		<main class="group fullHeight">
+
+
+			<content grid="2/3">
+				<titlebuttons class="group" palette="primary">
 					<div id="closeButton" button="circle" palette="danger"></div>
 					<div id="minimizeButton" button="circle" palette="warning"></div>
+				</titlebuttons>
+
+				<heartrate palette="primary">
+						<span number="bpm">172</span>
+				</heartrate>
+
+				<div class="group">
+					<date grid palette="primary">
+						<span id="time" number="time">9:45AM</span>
+						<span id="date" number="date">7/28/2015</span>
+					</date>
+
+					<min grid palette="primary">
+						<span type="title">Minimum</span>
+						<span number="time">90</span>
+					</min>
+
+					<max grid palette="primary">
+						<span type="title">Maximum</span>
+						<span number="time">173</span>
+					</max>
 				</div>
-			</titlebar>
 
-			<sidebar grid="2/3">
+				<log palette="secondary">
+					<log-item>
+						<log-time palette="warning">10:12am</log-time>
+						<log-content>In mathematics and the arts, two quantities.</log-content> 
+					</log-item>
 
-			</sidebar>
+					<log-item>
+						<log-time palette="all-clear">10:30am</log-time>
+						<log-content>This equation has as its unique number.</log-content>
+					</log-item>
 
-			<content grid="1/3" palette="secondary">
-			
+					<log-item>
+						<log-time palette="all-clear">11:03am</log-time>
+						<log-content>At least siRenaissance, many artists and architects.</log-content>
+					</log-item>
+
+					<log-item>
+						<log-time palette="danger">11:42am</log-time>
+						<log-content>As the sequence approaches infinity.</log-content>
+					</log-item>
+				</log>
+					
 			</content>
+
+			<sidebar grid="1/3" palette="primary">
+			
+			</sidebar>
 		</main>
 		
 		<script src="js/script.js"></script>
