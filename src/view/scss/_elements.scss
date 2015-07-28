@@ -1,8 +1,21 @@
-title-bar {
-	height: 25px;
+$titleHeight: 25px;
+
+main {
+}
+
+titlebar {
+	height: $titleHeight;
 	overflow: hidden;
 	border-bottom: 1px solid #000;
 	-webkit-app-region: drag;
+}
+
+sidebar {
+	height: calc(100% - #{$titleHeight})
+}
+
+content {
+	height: calc(100% - #{$titleHeight})
 }
 
 [button] {

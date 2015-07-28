@@ -1,5 +1,5 @@
 @function background($lightness, $alpha) {
-  @return hsla(0, 100%, $lightness, $alpha);
+  @return hsla(190, 100%, $lightness, $alpha);
 }
 @function danger($lightness) {
   @return hsla(3, 66%, $lightness, 1);
@@ -19,8 +19,9 @@
 	background: background(0, 0.7);
 }
 [palette~="secondary"] {
-	background: background(0, 0.2);
+	background: background(40, 0.4);
 }
+
 
 [palette~="danger"] {
 	background: danger(63%);

@@ -33,7 +33,8 @@ class Window
 			height: _height, 
 			frame: hasFrame,
 			resizable: hasFrame,
-			transparent: !hasFrame
+			transparent: !hasFrame,
+			center :true
 		});
 		mainWindow.loadUrl('file://' + Node.__dirname + '/' + _file + '.html');
 		mainWindow.openDevTools();
