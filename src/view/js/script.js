@@ -65,6 +65,16 @@ function logEvent(dangerLevel, text) {
 	}
 }
 
+////////////////////////////////////////////////////////////
+//////////////////  SETTINGS           /////////////////////
+var clearButton = document.getElementById('clearButton');
+clearButton.addEventListener('click', clearLog);
+function clearLog() {
+	while(logWindow.hasChildNodes())
+		logWindow.removeChild(logWindow.firstChild);
+}
+
+
 
 
 

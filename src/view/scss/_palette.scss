@@ -1,5 +1,5 @@
 @function background($lightness, $alpha) {
-  @return hsla(190, 100%, $lightness, $alpha);
+  @return hsla(190, 0%, $lightness, $alpha);
 }
 @function defaultType($lightness) {
   @return hsla(190, 100%, $lightness, 1);
@@ -13,10 +13,13 @@
 @function allClear($lightness) {
   @return hsla(129, 80%, $lightness, 1);
 }
+@function soft($lightness) {
+  @return hsla(200, 0%, $lightness, 1);
+}
 
 [palette] {transition: 0.3333s;}
-[palette]:hover {transition: 0s;}
-[palette]:active {transition: 0s;}
+[palette]:hover {transition: 0.05s;}
+[palette]:active {transition: 0.05s;}
 
 [palette~="primary"] {
 	background: background(0, 0.7);
@@ -25,6 +28,7 @@
 [palette~="secondary"] {
 	background: background(95, 0.9);
 }
+
 [palette~="danger"] {
 	background: danger(63%);
 	border-color: danger(43%);
@@ -43,5 +47,19 @@
 	background: allClear(71%);
 	border-color: allClear(51%);
 }
-[palette~="all-clear"]:hover {border-color: all-clear(81%);}
-[palette~="all-clear"]:active {background: all-clear(61%);}
+[palette~="all-clear"]:hover {border-color: allClear(81%);}
+[palette~="all-clear"]:active {background: allClear(61%);}
+
+[palette~="soft"] {
+	background: transparent;
+	border-color: soft(51%);
+}
+[palette~="soft-button"]:hover {border-color: soft(81%);}
+[palette~="soft-button"]:active {background: soft(40%);}
+
+
+[palette~="slider"] {
+	background: background(10, 0.9);
+}
+[palette~="slider"]:hover {background: background(40, 0.9);}
+[palette~="slider"]:active {background: background(45, 0.9);}

@@ -13,12 +13,13 @@
 
 
 			<content grid="2/3">
-				<titlebuttons class="group" palette="primary">
+				<title-buttons class="group" palette="primary">
 					<div id="closeButton" button="circle" palette="danger"></div>
 					<div id="minimizeButton" button="circle" palette="warning"></div>
-				</titlebuttons>
+				</title-buttons>
 
 				<heartrate palette="primary">
+						<span type="title">HeartRate</span>
 						<span number="bpm">172</span>
 				</heartrate>
 
@@ -28,9 +29,14 @@
 						<span id="date" number="date">7/28/2015</span>
 					</date>
 
+					<average grid palette="primary">
+						<span type="title">Average</span>
+						<span number="time">87</span>
+					</average>
+
 					<min grid palette="primary">
 						<span type="title">Minimum</span>
-						<span number="time">90</span>
+						<span number="time">63</span>
 					</min>
 
 					<max grid palette="primary">
@@ -39,16 +45,50 @@
 					</max>
 				</div>
 
-				<log id="logWindow" palette="secondary">
-
-				</log>
+				<log id="logWindow" palette="secondary"></log>
 					
 			</content>
 
 			<sidebar grid="1/3" palette="primary">
-				<span type="title">Bulb Name: </span>
-				<span type="title">Bulb Status: </span>
-				<span type="title">Last Event: </span>
+
+				<settings>
+					<setting-group palette="soft">
+						<span type="group-title">Minimum HR</span>
+						<setting-item>
+							<span type="description">Rate: 150bpm</span>
+							<input type=range min=0 max=100 value=0 step=10 palette="slider">
+						</setting-item>
+
+						<setting-item>
+							<span type="description">Period: 0s</span>
+							<input type=range min=0 max=100 value=0 step=10 palette="slider">
+						</setting-item>
+					</setting-group>
+						
+
+					<setting-group palette="soft">
+						<span type="group-title">Maximum HR</span>
+						<setting-item>
+							<span type="description">Rate: 150bpm</span>
+							<input type=range min=0 max=100 value=0 step=10 palette="slider">
+						</setting-item>
+
+						<setting-item>
+							<span type="description">Period: 0s</span>
+							<input type=range min=0 max=100 value=0 step=10 palette="slider">
+						</setting-item>
+					</setting-group>
+				</settings>
+
+				<application-buttons class="group">
+					<div id="resetButton" button="box-text" palette="soft soft-button">
+						Reset Bulb
+					</div>
+
+					<div id="clearButton" button="box-text" palette="soft soft-button">
+						Clear Log
+					</div>
+				</application-buttons>
 			</sidebar>
 		</main>
 		
