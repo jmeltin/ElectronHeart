@@ -44,13 +44,13 @@ var logWindow = document.getElementById('logWindow');
 var logScrollHeight = logWindow.scrollHeight;
 var logLength = 0;
 var logMaxLength = 50;
-function logEvent(dangerLevel, text) {
+function logEvent(data) {
 	var item = document.createElement('log-item');
 	var time = document.createElement('log-time');
 	var content = document.createElement('log-content');
 	time.innerHTML = new DateTime().time();
-	time.setAttribute('palette', dangerLevel);
-	content.innerHTML = text;
+	time.setAttribute('palette', data.dangerLevel);
+	content.innerHTML = data.text;
 
 	logWindow.appendChild(item);
 	item.appendChild(time);
@@ -68,16 +68,27 @@ function logEvent(dangerLevel, text) {
 ////////////////////////////////////////////////////////////
 //////////////////  SETTINGS           /////////////////////
 var clearButton = document.getElementById('clearButton');
+var resetButton = document.getElementById('resetButton');
 clearButton.addEventListener('click', clearLog);
+resetButton.addEventListener('click', resetBulb);
 function clearLog() {
 	while(logWindow.hasChildNodes())
 		logWindow.removeChild(logWindow.firstChild);
+	logEvent(events.clearedLog);
+}
+function resetBulb() {
+	logEvent(events.resetBulb);
+}
+function outputUpdate(value, element) {
+	document.querySelector('#' + element).value = value;
 }
 
-
-
-
-
+////////////////////////////////////////////////////////////
+//////////////////  FRONTEND EVENTS    /////////////////////
+var events = {
+	"clearedLog": {dangerLevel: 'all-clear', text: 'User cleared log.'}, 
+	"resetBulb": {dangerLevel: 'all-clear', text: 'User reset LIFX bulb.'}
+};
 
 
 
